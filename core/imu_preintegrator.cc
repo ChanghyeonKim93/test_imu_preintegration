@@ -1,4 +1,4 @@
-#include "imu_preintegrator.h"
+#include "core/imu_preintegrator.h"
 
 #include <iostream>
 #include <limits>

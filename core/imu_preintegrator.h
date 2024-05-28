@@ -9,6 +9,17 @@
 
 #define GRAVITATIONAL_ACCELERATION 9.81
 
+struct Pose {
+  double time{0.0};
+  Eigen::Isometry3d pose;
+};
+
+struct ImuData {
+  double time{0.0};
+  Eigen::Vector3d linear_acc{Eigen::Vector3d::Zero()};
+  Eigen::Vector3d angular_vel{Eigen::Vector3d::Zero()};
+};
+
 namespace imu_preintegrator {
 
 struct Parameters {
@@ -91,12 +102,6 @@ struct ImuPreintegrationResidual {
       Mat33 ddbg{Mat33::Zero()};
     } v;
   } jacobians;
-};
-
-struct ImuData {
-  double time{0.0};
-  Vec3 linear_acc{Vec3::Zero()};
-  Vec3 angular_vel{Vec3::Zero()};
 };
 
 struct ImuBias {
