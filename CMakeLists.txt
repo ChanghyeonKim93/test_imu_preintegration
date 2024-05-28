@@ -22,4 +22,5 @@ add_executable(
 target_include_directories(
   test_imu_preintegration_residual_only_optimization
   PUBLIC
-  ${CMAKE_SOURCE_DIR})
+  ${CMAKE_SOURCE_DIR}
+  ${EIGEN3_INCLUDE_DIR}/eigen3)
